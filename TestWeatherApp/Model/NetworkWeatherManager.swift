@@ -9,8 +9,8 @@ import Foundation
 
 struct NetworkWeatherManager {
     
-    func fetchWeahter(completionHandler: @escaping (Weather) -> Void) {
-        let urlString = "https://api.weather.yandex.ru/v2/forecast?lat=55.833333&lon=37.616667"
+    func fetchWeahter(latitude: Double, longitude: Double, completionHandler: @escaping (Weather) -> Void) {
+        let urlString = "https://api.weather.yandex.ru/v2/forecast?lat=\(latitude)&lon=\(longitude)"
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
         request.addValue("\(apiKey)", forHTTPHeaderField: "X-Yandex-API-Key")
@@ -18,7 +18,6 @@ struct NetworkWeatherManager {
         
         let task = URLSession.shared.dataTask(with: request) { (data, repsonce, error) in
             guard let data = data else { return }
-            print(String(data: data, encoding: .utf8)!)
             if let weather = self.parseJSON(withData: data) {
                 completionHandler(weather)
             }
