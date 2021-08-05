@@ -10,7 +10,6 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var cityNameLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
            
@@ -28,29 +27,21 @@ class DetailViewController: UIViewController {
     
     func refreshLabels() {
         cityNameLabel.text = weatherModel?.name
-        
         conditionLabel.text = weatherModel?.conditionString
-        temperatureLabel.text = "\(weatherModel?.temperature)"
-        pressureValueLabel.text = "\(weatherModel?.pressureMm)"
-        windSpeedValueLabel.text = "\(weatherModel?.windSpeed)"
-        minTempValueLabel.text = "\(weatherModel?.tempMin)"
-        maxTempValueLabel.text = "\(weatherModel?.tempMax)"
-        
-        guard let url = URL(string: "https://yastatic.net/weather/i/icons/funky/dark/\((weatherModel?.conditionCode)!).svg") else { return }
-        
-        let session = URLSession.shared
-        session.dataTask(with: url) { (data, responce, error) in
-            if let error = error {
-                return
-            }
-            if let data = data {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self.imageView.image = image
-                        self.imageView.clipsToBounds = true
-                    }
-                }
-            }
-        }.resume()
+        if let temp = weatherModel?.temperature {
+            temperatureLabel.text = "\(temp)"
+        }
+        if let pressureMm = weatherModel?.pressureMm {
+            pressureValueLabel.text = "\(pressureMm)"
+        }
+        if let windSpeed = weatherModel?.windSpeed {
+            windSpeedValueLabel.text = "\(windSpeed)"
+        }
+        if let tempMin = weatherModel?.tempMin {
+            minTempValueLabel.text = "\(tempMin)"
+        }
+        if let tempMax = weatherModel?.tempMax {
+            maxTempValueLabel.text = "\(tempMax)"
+        }
     }
 }
