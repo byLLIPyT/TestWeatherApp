@@ -35,9 +35,8 @@ struct NetworkWeatherManager {
             
             return weather
         } catch let error as NSError {
-            print(error.localizedDescription)
+           // print(error.localizedDescription)
         }
-        return nil
-        
+        return nil        
     }
 }

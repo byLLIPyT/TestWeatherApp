@@ -21,6 +21,7 @@
 		ABB8778D26B53A02001F1F8F /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8778C26B53A02001F1F8F /* WeatherData.swift */; };
 		ABB8779026B53CC3001F1F8F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8778F26B53CC3001F1F8F /* Weather.swift */; };
 		ABB8779326B549CC001F1F8F /* GetCitiesWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8779226B549CC001F1F8F /* GetCitiesWeather.swift */; };
+		ABC5D77926BBCBBA00E1ADCB /* addCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5D77826BBCBBA00E1ADCB /* addCity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		ABB8778C26B53A02001F1F8F /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		ABB8778F26B53CC3001F1F8F /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		ABB8779226B549CC001F1F8F /* GetCitiesWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesWeather.swift; sourceTree = "<group>"; };
+		ABC5D77826BBCBBA00E1ADCB /* addCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,8 @@
 				ABB8779226B549CC001F1F8F /* GetCitiesWeather.swift */,
 				ABB8778F26B53CC3001F1F8F /* Weather.swift */,
 				AB6C8A4026BB1AFD000AD97A /* Setting.swift */,
+				ABC5D77826BBCBBA00E1ADCB /* addCity.swift */,
+				AB6C8A3D26BB19B7000AD97A /* TableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,7 +100,6 @@
 			children = (
 				AB54A18D26B42C1800E839F3 /* TableViewController.swift */,
 				AB6C8A4426BB20E8000AD97A /* DetailViewController.swift */,
-				AB6C8A3D26BB19B7000AD97A /* TableViewCell.swift */,
 				AB54A18226B42B7D00E839F3 /* LaunchScreen.storyboard */,
 				AB54A17D26B42B7B00E839F3 /* Main.storyboard */,
 			);
@@ -187,6 +190,7 @@
 			files = (
 				AB6C8A4526BB20E8000AD97A /* DetailViewController.swift in Sources */,
 				AB6C8A4126BB1AFD000AD97A /* Setting.swift in Sources */,
+				ABC5D77926BBCBBA00E1ADCB /* addCity.swift in Sources */,
 				AB54A17826B42B7B00E839F3 /* AppDelegate.swift in Sources */,
 				AB54A18E26B42C1800E839F3 /* TableViewController.swift in Sources */,
 				ABB8779326B549CC001F1F8F /* GetCitiesWeather.swift in Sources */,

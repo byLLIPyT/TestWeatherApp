@@ -25,6 +25,8 @@ class DetailViewController: UIViewController {
         refreshLabels()
     }
     
+    
+    
     func refreshLabels() {
         cityNameLabel.text = weatherModel?.name
         conditionLabel.text = weatherModel?.conditionString
