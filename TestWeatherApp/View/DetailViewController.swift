@@ -8,11 +8,11 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
-           
+    
     @IBOutlet weak var pressureValueLabel: UILabel!
     @IBOutlet weak var windSpeedValueLabel: UILabel!
     @IBOutlet weak var minTempValueLabel: UILabel!

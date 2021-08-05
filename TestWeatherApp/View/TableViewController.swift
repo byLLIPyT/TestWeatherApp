@@ -15,7 +15,7 @@ class TableViewController: UITableViewController {
     var cities = ["Ставрополь","Екатеринбург","Тюмень","Краснодар","Новороссийск","Уфа","Пермь","Чита","Глазов","Омск","Минеральные воды"]
     
     let networkWeatherManager = NetworkWeatherManager()
-               
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     var searchBarisEmpty: Bool {
@@ -67,7 +67,7 @@ class TableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-   
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
             return filteredCitiesArray.count
@@ -77,7 +77,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Settings.cellIdentifier.rawValue, for: indexPath) as! TableViewCell
-
+        
         
         var weather = Weather()
         if isFiltering {
@@ -86,7 +86,7 @@ class TableViewController: UITableViewController {
             weather = citiesArray[indexPath.row]
         }
         cell.configure(weather: weather)
-
+        
         return cell
     }
     
@@ -95,7 +95,12 @@ class TableViewController: UITableViewController {
             
             let editionRow = self.cities[indexPath.row]
             if let index = self.cities.firstIndex(of: editionRow) {
-                self.citiesArray.remove(at: index)
+                
+                if self.isFiltering {
+                    self.filteredCitiesArray.remove(at: index)
+                } else {
+                    self.citiesArray.remove(at: index)
+                }
             }
             tableView.reloadData()
         }

@@ -32,11 +32,10 @@ struct NetworkWeatherManager {
             guard let weather = Weather(weatherData: weatherData) else {
                 return nil
             }
-            
             return weather
         } catch let error as NSError {
-           // print(error.localizedDescription)
+            print(error.localizedDescription)
         }
-        return nil        
+        return nil
     }
 }

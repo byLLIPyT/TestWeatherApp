@@ -17,7 +17,6 @@ extension UIViewController {
             let textAlert = alert.textFields?.first
             guard let text = textAlert?.text else { return }
             completionHandler(text)
-            
         }
         
         alert.addTextField { (textFiled) in
@@ -26,8 +25,7 @@ extension UIViewController {
         
         let alertCancel = UIAlertAction(title: "Cancel", style: .default) { (_) in}
         alert.addAction(okAction)
-        alert.addAction(alertCancel)
-        
+        alert.addAction(alertCancel)        
         present(alert, animated: true, completion: nil)
     }
 }

@@ -12,7 +12,6 @@ struct WeatherData: Decodable {
     let info: Info
     let fact: Fact
     let forecasts: [Forecast]
-
 }
 
 struct Info: Decodable {
